@@ -25,9 +25,17 @@ table{
     width: 700px;
     overflow:auto;
 }
+    #wrapper {
+        width:1000px;
+    }
 
 .header {
     background-color: #D9D9D9;              
+}
+
+.footer {
+    background-color: #D9D9D9;     
+    height:18px!important;         
 }
 
 .time {

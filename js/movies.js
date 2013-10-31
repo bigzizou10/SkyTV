@@ -41,8 +41,7 @@
             splitArr,
             preEndTime = 900,
             id,
-            newId,
-            newWidth;
+            newId;
 
         _startTime = mapTime(startTime,true);
         _endTime = mapTime(endTime,true);
@@ -59,10 +58,6 @@
             preEndTime = mapTime(splitArr[1],false);
         });
 
-        newWidth = preEndTime - 900 + width;
-        if (newWidth > 700) {
-            width = 700 - (preEndTime - 900);
-        }
         //Calculate new movies starttime position
         positionLeft = (_startTime - preEndTime) * 0.98;
 
@@ -94,11 +89,11 @@
         });
 
         //Amend inserted movie's css
-        configureCSS(newId, positionLeft, width, newWidth);
+        configureCSS(newId, positionLeft, width);
     }
 
 
-    function configureCSS(newId, positionLeft, width, newWidth) {
+    function configureCSS(newId, positionLeft, width) {
         $("#" + newId).width(width);
 
         $("#" + newId).css('left', positionLeft);
@@ -106,9 +101,6 @@
 
         if (positionLeft < 1) {
             $("#" + newId).css('border-left', 'none');
-        }
-        if (newWidth > 700) {
-            $("#" + newId).css('border-right', 'none');
         }
     }
 
