@@ -12,14 +12,14 @@
       <sean_channel>
         <name>From Russia with Love</name>
         <start_time>11.00am</start_time>
-        <end_time>1.00pm</end_time>
+        <end_time>2.00pm</end_time>
       </sean_channel>
     </movie>
   <movie id="3">
     <sean_channel>
       <name>Goldfinger</name>
-      <start_time>1.00pm</start_time>
-      <end_time>3.00pm</end_time>
+      <start_time>2.00pm</start_time>
+      <end_time>4.00pm</end_time>
     </sean_channel>
   </movie>
   <movie id="4">

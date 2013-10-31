@@ -1,12 +1,10 @@
 ﻿$(document).ready(function () {
     $("#upload").click(function () {
-        var filePath = $("#filePath").val();
-        upload(filePath);
-        $("#filePath").attr('disabled', 'disabled');
+        upload();       
         $("#upload").attr('disabled', 'disabled');
     });
 
-    function upload(filePath) {
+    function upload() {
         $.ajax({
             type: "GET",
             url: "movies.xml",
@@ -31,6 +29,37 @@
         });
     }
 
+    function configureCSS(newId, positionLeft, width) {
+        if (positionLeft < 1) {
+            $("#" + newId).css('border-left', 'none');
+        }
+
+        $("#" + newId).width(width);
+        $("#" + newId).css('left', positionLeft);
+    }
+
+    function removeDefaultText(nodeName) {
+        if ($("#" + nodeName).text() == "No programmes available") {
+            $("#" + nodeName).text("");
+        }
+    }
+
+    function mapTime(time,amPmInclusive) {
+        var amPm,
+            actualTime;
+
+        if (amPmInclusive) {
+            amPm = time.substr(time.length - 2);
+            actualTime = parseInt(time.substr(0, time.length - 2) * 100);
+
+            if (amPm == "pm" && actualTime < 1200)
+                actualTime += 1200;
+        }
+        else {
+            actualTime = parseInt(time);
+        }
+        return actualTime;
+    }
 
     function insertMovie(nodeName, movieName, startTime, endTime) {
         var _startTime,
@@ -65,6 +94,9 @@
         newId = nodeName + "-" + _endTime;
         $("#" + nodeName).append("<td id='" + newId + "' class='movie'>" + movieName + '</td>');
 
+        //Amend inserted movie's css
+        configureCSS(newId, positionLeft, width);
+
         //Create Remote Records popup
         $('#' + nodeName).on('click', '#'+newId, function () {
             $("#dialog-message").dialog({
@@ -87,44 +119,6 @@
                 $('.c'+newId).remove();
             });
         });
-
-        //Amend inserted movie's css
-        configureCSS(newId, positionLeft, width);
-    }
-
-
-    function configureCSS(newId, positionLeft, width) {
-        $("#" + newId).width(width);
-
-        $("#" + newId).css('left', positionLeft);
-        $("#" + newId).css('border-spacing', positionLeft);
-
-        if (positionLeft < 1) {
-            $("#" + newId).css('border-left', 'none');
-        }
-    }
-
-    function removeDefaultText(nodeName) {
-        if ($("#" + nodeName).text() == "No programmes available") {
-            $("#" + nodeName).text("");
-        }
-    }
-
-    function mapTime(time,amPmInclusive) {
-        var amPm,
-            actualTime;
-
-        if (amPmInclusive) {
-            amPm = time.substr(time.length - 2);
-            actualTime = parseInt(time.substr(0, time.length - 2) * 100);
-
-            if (amPm == "pm" && actualTime < 1200)
-                actualTime += 1200;
-        }
-        else {
-            actualTime = parseInt(time);
-        }
-        return actualTime;
     }
 });
 

@@ -100,11 +100,7 @@
         </div>
 
         <h1>Ajax File Upload</h1>
- 
-         <input id="filePath" type="file" size="60" name="xmlfile">
-         <button id="upload" name="Upload" size="60">Upload</button>
-
-        
+         <button id="upload" name="Upload" size="60">Upload</button>       
 
         <h1>Instructions</h1>
             <ul>
@@ -112,10 +108,12 @@
                 <li>XML File Path: C:\SkyTV\movies.xml</li>
                 <li>Upload Button: Reads movies.xml and populates the channel table</li>
                 <li>IE 10 and Google Chrome is used for testing</li>
+                <li>9AM Header Explanation: left border is 9AM right border is 10AM</li>
             </ul>
             <h2>Limitations</h2>
                 <ul>
-                    <li>movies.xml should be sorted by time. E.g: Sean_channel movie_id=1 should have the earliest start_time. Sean_channel movie_id=2's start_time should be greater or equal to movie_id=1's end_time</li>
+                    <li>Assumes that there is no time gap between movies.</li>
+                    <li>movies.xml should be sorted by time. E.g: Sean_channel movie_id=1 should have the earliest start_time. Sean_channel movie_id=2's start_time should be equal to movie_id=1's end_time</li>
                 </ul>
         <h1>Ilken Bahcecioglu</h1>
         <div id="dialog-message">
