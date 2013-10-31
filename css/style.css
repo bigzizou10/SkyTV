@@ -35,6 +35,10 @@ table{
     text-align: center;
 }
 
+#remote {
+    padding-top:50px;
+}
+
 .movie {
     border-left: solid #456892;
     border-right: solid #456892;
@@ -43,4 +47,11 @@ table{
     height: 45px;
     position:relative;
     top: 0px;  
+}
+
+.ui-dialog-titlebar {
+  background-color: #FFFFFF!important;
+  border: none!important;
+  height: 80px!important;
+  font-size: 16pt!important;
 }

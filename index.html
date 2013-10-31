@@ -5,6 +5,7 @@
 
         <!--References-->
         <link href="css/style.css" rel="stylesheet" />
+        <link href="css/jquery-ui.css" rel="stylesheet" />
         <script src="js/jquery-1.10.2.min.js"></script>
         <script src="js/jquery-ui.min.js"></script>
         <script src="js/jquery.form.js"></script>
@@ -83,11 +84,39 @@
             </tr>
         </table>
 
+        <div id="remote">
+            <table id="remoteRecords">
+                <tr>
+                    <th class="header">Remote Records</th>
+                    <th class="header">X</th>
+                </tr>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+
         <h1>Ajax File Upload</h1>
  
          <input id="filePath" type="file" size="60" name="xmlfile">
-         <button id="upload" name="Upload">Upload</button>
+         <button id="upload" name="Upload" size="60">Upload</button>
 
-        <div id="output"></div>
+        
+
+        <h1>Instructions</h1>
+            <ul>
+                <li>Project Path: C:\SkyTV</li>
+                <li>XML File Path: C:\SkyTV\movies.xml</li>
+                <li>Upload Button: Reads movies.xml and populates the channel table</li>
+                <li>IE 10 and Google Chrome is used for testing</li>
+            </ul>
+            <h2>Limitations</h2>
+                <ul>
+                    <li>movies.xml should be sorted by time. E.g: Sean_channel movie_id=1 should have the earliest start_time. Sean_channel movie_id=2's start_time should be greater or equal to movie_id=1's end_time</li>
+                </ul>
+        <h1>Ilken Bahcecioglu</h1>
+        <div id="dialog-message">
+
+        </div>
     </body>
 </html>

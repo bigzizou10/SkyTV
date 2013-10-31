@@ -1,4 +1,11 @@
 ﻿$(document).ready(function () {
+    $("#upload").click(function () {
+        var filePath = $("#filePath").val();
+        upload(filePath);
+        $("#filePath").attr('disabled', 'disabled');
+        $("#upload").attr('disabled', 'disabled');
+    });
+
     function upload(filePath) {
         $.ajax({
             type: "GET",
@@ -15,10 +22,6 @@
                 endTime,
                 movieName;
 
-            //$("#output").append($(this).attr("id") + "<br />");
-            //$("#output").append($(this).find("start_time").text() + "<br />");
-            //$("#output").append($(this).find("end_time").text() + "<br />");
-
             nodeName = $(this).find("name")[0].parentNode.nodeName;
             movieName = $(this).find("name").text();
             startTime = $(this).find("start_time").text();
@@ -28,52 +31,108 @@
         });
     }
 
+
     function insertMovie(nodeName, movieName, startTime, endTime) {
         var _startTime,
             _endTime,
             duration,
             width,
             positionLeft,
-            lastFour = 900,
-            id;
+            splitArr,
+            preEndTime = 900,
+            id,
+            newId,
+            newWidth;
 
-        _startTime = parseFloat(startTime) * 100;
-        _endTime = parseFloat(endTime) * 100;
+        _startTime = mapTime(startTime,true);
+        _endTime = mapTime(endTime,true);
         duration = _endTime - _startTime;
         width = duration * 0.98;
 
-        //TO DO: take care of AM-PM
-        //Smaller Functions
-        //On TD Click
-        //Overflow-x
+        //remove 'No Programmes Available'
+        removeDefaultText(nodeName);
 
-        if ($("#" + nodeName).text() == "No programmes available") {
-            $("#" + nodeName).text("");
-        }
-
+        //Get previous movies end time
         $("#" + nodeName).find('td').each(function () {
             id = $(this).attr('id');
-            lastFour = id.substr(id.length - 4);
+            splitArr = id.split("-");
+            preEndTime = mapTime(splitArr[1],false);
         });
 
-        positionLeft = (_startTime - lastFour) * 0.98;
+        newWidth = preEndTime - 900 + width;
+        if (newWidth > 700) {
+            width = 700 - (preEndTime - 900);
+        }
+        //Calculate new movies starttime position
+        positionLeft = (_startTime - preEndTime) * 0.98;
 
-        $("#" + nodeName).append("<td id='" + nodeName + _endTime + "' class='movie'>"+movieName+'</td>');
+        //Insert the movie
+        newId = nodeName + "-" + _endTime;
+        $("#" + nodeName).append("<td id='" + newId + "' class='movie'>" + movieName + '</td>');
 
-        $("#" + nodeName + _endTime).width(width);
+        //Create Remote Records popup
+        $('#' + nodeName).on('click', '#'+newId, function () {
+            $("#dialog-message").dialog({
+                width: 450,
+                height: 300,
+                modal: true,
+                buttons: {
+                    Close: function () {
+                        $("#dialog-message").text("");
+                        $(this).dialog("destroy");
+                        $("#remoteRecords > tbody:last").append("<tr class='c"+newId+"'><td>" + $("#" + newId).text() + "</td><td><button id='x"+newId+"'>X</button></td></tr>");
+                    }
+                }
+            });
+            $(".ui-dialog-titlebar-close").hide();
+            $(".ui-dialog-titlebar").append("<img src='image/sky.png' id='skyImg' />");
+            $(".ui-dialog-titlebar").append("Remote Record");
+            $("#dialog-message").append("The James Bond movie " + $("#" + newId).text() + " is set to be recorded");
+            $("#remoteRecords").on('click', '#x' + newId, function () {
+                $('.c'+newId).remove();
+            });
+        });
 
-        $("#" + nodeName + _endTime).css('left', positionLeft);
-        $("#" + nodeName + _endTime).css('border-spacing', positionLeft);
+        //Amend inserted movie's css
+        configureCSS(newId, positionLeft, width, newWidth);
+    }
+
+
+    function configureCSS(newId, positionLeft, width, newWidth) {
+        $("#" + newId).width(width);
+
+        $("#" + newId).css('left', positionLeft);
+        $("#" + newId).css('border-spacing', positionLeft);
 
         if (positionLeft < 1) {
-            $("#" + nodeName + _endTime).css('border-left', 'none');
+            $("#" + newId).css('border-left', 'none');
+        }
+        if (newWidth > 700) {
+            $("#" + newId).css('border-right', 'none');
         }
     }
 
-    $("#upload").click(function () {
-        var filePath = $("#filePath").val();
-        //$("#output").append($("#filePath").val());
-        upload(filePath);
-    });
+    function removeDefaultText(nodeName) {
+        if ($("#" + nodeName).text() == "No programmes available") {
+            $("#" + nodeName).text("");
+        }
+    }
+
+    function mapTime(time,amPmInclusive) {
+        var amPm,
+            actualTime;
+
+        if (amPmInclusive) {
+            amPm = time.substr(time.length - 2);
+            actualTime = parseInt(time.substr(0, time.length - 2) * 100);
+
+            if (amPm == "pm" && actualTime < 1200)
+                actualTime += 1200;
+        }
+        else {
+            actualTime = parseInt(time);
+        }
+        return actualTime;
+    }
 });
 

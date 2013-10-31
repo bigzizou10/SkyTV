@@ -10,37 +10,128 @@
     </movie>
     <movie id="2">
       <sean_channel>
-        <name>Moonraker</name>
+        <name>From Russia with Love</name>
         <start_time>11.00am</start_time>
-        <end_time>13.00am</end_time>
+        <end_time>1.00pm</end_time>
       </sean_channel>
     </movie>
   <movie id="3">
     <sean_channel>
-      <name>Thunderball</name>
-      <start_time>13.00pm</start_time>
-      <end_time>15.00pm</end_time>
+      <name>Goldfinger</name>
+      <start_time>1.00pm</start_time>
+      <end_time>3.00pm</end_time>
     </sean_channel>
   </movie>
   <movie id="4">
     <george_channel>
-      <name>ThunderBolt</name>
+      <name>Thunderball</name>
       <start_time>9.00am</start_time>
-      <end_time>12.20pm</end_time>
+      <end_time>11.20am</end_time>
     </george_channel>
   </movie>
   <movie id="5">
     <george_channel>
       <name>Bolt</name>
-      <start_time>12.20pm</start_time>
-      <end_time>14.00pm</end_time>
+      <start_time>11.20am</start_time>
+      <end_time>2.00pm</end_time>
     </george_channel>
   </movie>
   <movie id="6">
     <george_channel>
-      <name>Bolt2</name>
-      <start_time>14.00pm</start_time>
-      <end_time>18.00pm</end_time>
+      <name>OHMSS</name>
+      <start_time>2.00pm</start_time>
+      <end_time>5.00pm</end_time>
     </george_channel>
+  </movie>
+  <movie id="7">
+    <daniel_channel>
+      <name>Casino Royale</name>
+      <start_time>9.00am</start_time>
+      <end_time>11.05am</end_time>
+    </daniel_channel>
+  </movie>
+  <movie id="8">
+    <daniel_channel>
+      <name>Skyfall</name>
+      <start_time>11.05am</start_time>
+      <end_time>2.00pm</end_time>
+    </daniel_channel>
+  </movie>
+  <movie id="9">
+    <daniel_channel>
+      <name>Skyfall</name>
+      <start_time>2.00pm</start_time>
+      <end_time>4.00pm</end_time>
+    </daniel_channel>
+  </movie>
+  <movie id="10">
+    <roger_channel>
+      <name>Live and Let Die</name>
+      <start_time>9.00am</start_time>
+      <end_time>10.15am</end_time>
+    </roger_channel>
+  </movie>
+  <movie id="11">
+    <roger_channel>
+      <name>The Man with the Golden Gun</name>
+      <start_time>10.15am</start_time>
+      <end_time>12.32pm</end_time>
+    </roger_channel>
+  </movie>
+  <movie id="12">
+    <roger_channel>
+      <name>A View to a Kill</name>
+      <start_time>12.32pm</start_time>
+      <end_time>2.00pm</end_time>
+    </roger_channel>
+  </movie>
+  <movie id="13">
+    <roger_channel>
+      <name>The Spy Who Loved Me</name>
+      <start_time>2.00pm</start_time>
+      <end_time>4.00pm</end_time>
+    </roger_channel>
+  </movie>
+  <movie id="14">
+    <timothy_channel>
+      <name>The Living Daylights</name>
+      <start_time>9.am</start_time>
+      <end_time>10.30am</end_time>
+    </timothy_channel>
+  </movie>
+  <movie id="15">
+    <timothy_channel>
+      <name>Licence to Kill</name>
+      <start_time>10.30am</start_time>
+      <end_time>1.00pm</end_time>
+    </timothy_channel>
+  </movie>
+  <movie id="16">
+    <timothy_channel>
+      <name>Golden Eye</name>
+      <start_time>1.00pm</start_time>
+      <end_time>3.00pm</end_time>
+    </timothy_channel>
+  </movie>
+  <movie id="17">
+    <pierce_channel>
+      <name>For Your Eyes Only</name>
+      <start_time>9.am</start_time>
+      <end_time>11.45am</end_time>
+    </pierce_channel>
+  </movie>
+  <movie id="18">
+    <pierce_channel>
+      <name>Die Another Day</name>
+      <start_time>11.45am</start_time>
+      <end_time>1.30pm</end_time>
+    </pierce_channel>
+  </movie>
+  <movie id="19">
+    <pierce_channel>
+      <name>Tomorrow Never Dies</name>
+      <start_time>1.30pm</start_time>
+      <end_time>3.00pm</end_time>
+    </pierce_channel>
   </movie>
 </movie_data>
