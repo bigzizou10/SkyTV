@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<movie_data>
+  <title>Movie Data</title>
+    <movie id="1">
+      <sean_channel>
+        <name>Dr No</name>
+        <start_time>9.00am</start_time>
+        <end_time>11.00am</end_time>
+      </sean_channel>
+    </movie>
+    <movie id="2">
+      <sean_channel>
+        <name>Moonraker</name>
+        <start_time>11.00am</start_time>
+        <end_time>13.00am</end_time>
+      </sean_channel>
+    </movie>
+  <movie id="3">
+    <sean_channel>
+      <name>Thunderball</name>
+      <start_time>13.00pm</start_time>
+      <end_time>15.00pm</end_time>
+    </sean_channel>
+  </movie>
+  <movie id="4">
+    <george_channel>
+      <name>ThunderBolt</name>
+      <start_time>9.00am</start_time>
+      <end_time>12.20pm</end_time>
+    </george_channel>
+  </movie>
+  <movie id="5">
+    <george_channel>
+      <name>Bolt</name>
+      <start_time>12.20pm</start_time>
+      <end_time>14.00pm</end_time>
+    </george_channel>
+  </movie>
+  <movie id="6">
+    <george_channel>
+      <name>Bolt2</name>
+      <start_time>14.00pm</start_time>
+      <end_time>18.00pm</end_time>
+    </george_channel>
+  </movie>
+</movie_data>

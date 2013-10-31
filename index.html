@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sky TV Guide</title>
+
+        <!--References-->
+        <link href="css/style.css" rel="stylesheet" />
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/jquery.form.js"></script>
+        <script src="js/movies.js"></script>
+    </head>
+    <body>
+        <h1>007 Channel</h1>
+        <p>James Bond films</p>
+
+        <table>
+            <tr>
+                <td>
+                    <table id="actors">
+                        <tr>
+                            <td class="header">Channel</td>
+                        </tr>
+                        <tr>
+                            <td class="header">Sean Connery</td>
+                        </tr>
+                        <tr>
+                            <td class="header">George Lazenby</td>
+                        </tr>
+                        <tr>
+                            <td class="header">Roger Moore</td>
+                        </tr>
+                        <tr>
+                            <td class="header">Timothy Dalton</td>
+                        </tr>
+                        <tr>
+                            <td class="header">Pierce Brosnan</td>
+                        </tr>
+                        <tr>
+                            <td class="header">Daniel Craig</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <div id="schedule">
+                        <table>
+                            <tr>
+                                <td class="header">
+                                    <table>
+                                        <tr>
+                                            <td class="time">9 AM</td>
+                                            <td class="time">10 AM</td>
+                                            <td class="time">11 AM</td>
+                                            <td class="time">12 PM</td>
+                                            <td class="time">1 PM</td>
+                                            <td class="time">2 PM</td>
+                                            <td class="time">3 PM</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr id="sean_channel_row">
+                                <td id="sean_channel">No programmes available</td>
+                            </tr>
+                            <tr id="george_channel_row">
+                                <td id="george_channel">No programmes available</td>
+                            </tr>
+                            <tr id="roger_channel_row">
+                                <td id="roger_channel">No programmes available</td>
+                            </tr>
+                            <tr id="timothy_channel_row">
+                                <td id="timothy_channel">No programmes available</td>
+                            </tr>
+                            <tr id="pierce_channel_row">
+                                   <td id="pierce_channel">No programmes available</td>
+                            </tr>
+                            <tr id="daniel_channel_row">
+                                   <td id="daniel_channel">No programmes available</td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <h1>Ajax File Upload</h1>
+ 
+         <input id="filePath" type="file" size="60" name="xmlfile">
+         <button id="upload" name="Upload">Upload</button>
+
+        <div id="output"></div>
+    </body>
+</html>

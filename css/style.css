@@ -1,0 +1,46 @@
+﻿body {
+    color: black;
+    font-family:'Comic Sans MS';
+}
+
+table{
+    border-collapse: collapse;   
+}
+    tr, td{
+        border: 1px solid #456892;
+        margin: 0em;
+        padding: 0em;
+        text-align: center;
+    }
+    tr {
+        height: 50px!important;
+        
+    }
+
+    td {
+        border-collapse: separate!important; 
+    }
+
+#schedule {
+    width: 700px;
+    overflow:auto;
+}
+
+.header {
+    background-color: #D9D9D9;              
+}
+
+.time {
+    width: 100px;
+    text-align: center;
+}
+
+.movie {
+    border-left: solid #456892;
+    border-right: solid #456892;
+    border-top: none;
+    border-bottom:none;
+    height: 45px;
+    position:relative;
+    top: 0px;  
+}
