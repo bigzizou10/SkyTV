@@ -46,7 +46,7 @@
         _startTime = mapTime(startTime,true);
         _endTime = mapTime(endTime,true);
         duration = _endTime - _startTime;
-        width = duration * 0.98;
+        width = duration * 0.99;
 
         //remove 'No Programmes Available'
         removeDefaultText(nodeName);
@@ -59,7 +59,7 @@
         });
 
         //Calculate new movies starttime position
-        positionLeft = (_startTime - preEndTime) * 0.98;
+        positionLeft = (_startTime - preEndTime) * 0.99;
 
         //Insert the movie
         newId = nodeName + "-" + _endTime;
